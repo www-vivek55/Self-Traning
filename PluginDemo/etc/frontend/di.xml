@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--<type name="Magento\Catalog\Model\Product">
+        <plugin name="before_set_name" type="\Custom\PluginDemo\Plugin\PluginSolution"/>
+    </type>-->
+
+    <type name="Custom\PluginDemo\Controller\Index\Index">
+        <plugin name="plugin_on_execute" type="Custom\PluginDemo\Plugin\PluginSolution"/>
+        <plugin name="plugin1_on_execute" type="Custom\PluginDemo\Plugin\PluginSolution1"/>
+        <plugin name="plugin2_on_execute" type="Custom\PluginDemo\Plugin\PluginSolution2"/>
+    </type>
+</config>

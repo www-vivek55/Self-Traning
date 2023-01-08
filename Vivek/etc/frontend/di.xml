@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--<preference for="Magento\Catalog\Api\ProductRepositoryInterface"
+                type="Custom\Vivek\Model\CustomRepository" />
+    <preference for="Custom\Vivek\Api\PencilInterface"
+                type="Custom\Vivek\Model\Pencil"/>
+    <preference for="Custom\Vivek\Api\Color"
+                type="Custom\Vivek\Model\Red"/>
+    <preference for="Custom\Vivek\Api\Size"
+                type="Custom\Vivek\Model\Big"/>
+    <preference for="Custom\Vivek\Api\Brightness"
+                type="Custom\Vivek\Model\Medium"/>-->
+
+    <virtualType name="virtualType" type="Custom\Vivek\Model\Red">
+        <arguments>
+            <argument name="brightness" xsi:type="object">Custom\Vivek\Model\High</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Custom\Vivek\Model\Pencil">
+        <arguments>
+            <!--<argument name="color" xsi:type="object">Custom\Vivek\Model\Yellow</argument>-->
+            <argument name="color" xsi:type="object">virtualType</argument>
+            <argument name="size" xsi:type="object">Custom\Vivek\Model\Small</argument>
+        </arguments>
+    </type>
+
+    <type name="Custom\Vivek\Model\Student">
+        <arguments>
+            <argument name="name" xsi:type="string">Mohit</argument>
+            <argument name="age" xsi:type="number">22</argument>
+            <argument name="score" xsi:type="array">
+                <item name="math" xsi:type="number">95</item>
+                <item name="hindi" xsi:type="number">100</item>
+                <item name="english" xsi:type="number">73</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
