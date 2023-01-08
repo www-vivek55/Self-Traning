@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <!--<block class="Custom\HelloWorld\Block\HelloWorld" name="hello_world" template="Custom_HelloWorld::custom.phtml">
+                <arguments>
+                    <argument name="show_hello" xsi:type="string">From layout template</argument>
+                    <argument name="show_array" xsi:type="array">
+                        <item name="first" xsi:type="string">First Array</item>
+                        <item name="second" xsi:type="string">Second Array</item>
+                    </argument>
+                </arguments>
+            </block>-->
+            <block class="Magento\Framework\View\Element\Template" name="hello_world" template="Custom_HelloWorld::custom.phtml" cacheable="false">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Custom\HelloWorld\ViewModel\HelloView</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

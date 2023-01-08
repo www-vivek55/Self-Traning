@@ -1,0 +1,23 @@
+<?php
+/*$title = $block->getTitle();
+$arr = $block->helloArray();*/
+$viewModel = $block->getData('view_model');
+$title = $viewModel->getTitle();
+$arr = $viewModel->helloArray();
+?>
+<h1><?= rand(10,100)?></h1>
+<h1><?= $title ?></h1>
+<?php foreach ($arr as $hello): ?>
+<ul>
+    <li><?= $hello ?></li>
+</ul>
+<?php endforeach; ?>
+<!--<h2>-->
+<?php //$this->getShowHello(); ?>
+<!--</h2>-->
+<?php //foreach ($this->getShowArray() as $arr): ?>
+<!--<ul>-->
+<!--    <li>--><?php //$arr ?><!--</li>-->
+<!--</ul>-->
+<?php //endforeach; ?>
+<h3><?= $viewModel->getProductName() ?></h3>

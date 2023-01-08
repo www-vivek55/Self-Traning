@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ * GET ALL EVENT FROM HERE [ https://www.simicart.com/blog/magento-2-events-list/?simipwa=1 ]
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_submit_all_after">
+        <observer name="log_text" instance="Custom\EventDemo\Observer\LogTextAtCheckout"/>
+    </event>
+
+    <event name="custom_event">
+        <observer name="greeting" instance="Custom\EventDemo\Observer\OurObserver"/>
+    </event>
+</config>
